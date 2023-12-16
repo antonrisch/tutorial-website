@@ -1,5 +1,4 @@
-// Use Zod to update the expected types
-const UpdateInvoice = FormSchema.omit({ id: true, date: true });
+'use server';
 
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
@@ -13,6 +12,9 @@ const FormSchema = z.object({
   status: z.enum(['pending', 'paid']),
   date: z.string(),
 });
+
+// Use Zod to update the expected types
+const UpdateInvoice = FormSchema.omit({ id: true, date: true });
  
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
