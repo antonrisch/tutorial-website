@@ -20,7 +20,7 @@ export async function createInvoice(formData: FormData) {
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
     status: formData.get('status'),
-  };
+  });
   // Test it out:
   const amountInCents = amount * 100;
   const date = new Date().toISOString().split('T')[0];
